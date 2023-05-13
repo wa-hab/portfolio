@@ -27,10 +27,14 @@
 			></a
 		>
 	</div>
-	<div id="blogs-section" class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 md:gap-x-10 mt-20 p-10">
+	<div
+		id="blogs-section"
+		class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 md:gap-x-10 mt-20 p-10"
+	>
 		{#each data.posts as post}
-			<div
+			<a
 				class="hover:border-b-4 hover:border-r-4 hover:-translate-x-2 hover:-translate-y-2 border-cyber-6 p-10 bg-neutral-800 text-xl transition-all duration-100 rounded-lg"
+				href={`/blog/${post.id}`}
 			>
 				<h1 class="text-3xl">{post.title}</h1>
 				<div class="text-lg mt-2 line-clamp-3 w-full lg:w-96">
@@ -62,12 +66,7 @@
 					quae. Vitae odit nobis officiis beatae. Odio fugiat molestias mollitia, pariatur sapiente
 					error!
 				</div>
-
-				<a class="text-cyber-6 underline text-sm cursor-pointer" href={`/blog/${post.id}`}
-					>Click here to read more</a
-				>
-			</div>
+			</a>
 		{/each}
-		
 	</div>
 </div>
