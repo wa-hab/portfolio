@@ -76,6 +76,12 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Wahab</title>
+</svelte:head>
+
+
+
 <div
 	class="flex flex-col font-orbitron min-h-screen bg-neutral-900 md:cursor-none text-cyber-6 max-w-screen scroll-smooth items-center justify-center"
 >

@@ -1,5 +1,6 @@
 <script>
 	export let data;
+	$:console.log(data);
 </script>
 
 <div
@@ -35,11 +36,11 @@
 			{#each data.posts as post}
 				<a
 					class="hover:border-b-4 hover:border-r-4 hover:-translate-x-2 hover:-translate-y-2 border-cyber-6 p-10 bg-neutral-800 text-xl transition-all duration-100 rounded-lg"
-					href={`/blog/${post.id}`}
+					href={`/blog/${post.slug}`}
 				>
 					<h1 class="text-3xl">{post.title}</h1>
-					<div class="text-lg mt-2 line-clamp-3 w-full lg:w-96">
-						{post?.shortDescription}
+					<div class="text-base text-cyber-6 mt-2 line-clamp-3 w-full lg:w-96">
+						{post?.description}
 					</div>
 				</a>
 			{/each}

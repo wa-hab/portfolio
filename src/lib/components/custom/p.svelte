@@ -1,0 +1,1 @@
+<p class="text-xl leading-8"><slot/></p>
