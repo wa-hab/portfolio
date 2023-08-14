@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import Navbar from '../lib/components/navbar.svelte';
 
 	onMount(() => {
 		const cursorOuter = document.querySelector('.outer-cursor');

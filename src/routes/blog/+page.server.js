@@ -3,6 +3,7 @@ import pb from "$lib/pocketbase.js"
 
 export async function load() {
     const posts = await pb.collection('posts').getFullList({
+		fields: ['title', 'created'],
         sort: '-created',
     });
 

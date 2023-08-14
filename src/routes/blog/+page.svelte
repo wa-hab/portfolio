@@ -27,46 +27,24 @@
 			></a
 		>
 	</div>
-	<div
-		id="blogs-section"
-		class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 md:gap-x-10 mt-20 p-10"
-	>
-		{#each data.posts as post}
-			<a
-				class="hover:border-b-4 hover:border-r-4 hover:-translate-x-2 hover:-translate-y-2 border-cyber-6 p-10 bg-neutral-800 text-xl transition-all duration-100 rounded-lg"
-				href={`/blog/${post.id}`}
-			>
-				<h1 class="text-3xl">{post.title}</h1>
-				<div class="text-lg mt-2 line-clamp-3 w-full lg:w-96">
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet velit optio vero ut facere
-					et asperiores, iure consequuntur dolore suscipit vitae tenetur itaque! Ullam neque aperiam
-					numquam labore commodi nihil. Voluptates architecto exercitationem iure quibusdam nihil,
-					voluptate consequatur pariatur illo saepe, nemo, eligendi qui temporibus ea magni. Culpa
-					omnis, totam vel reiciendis, similique praesentium, quia nam impedit dignissimos cumque
-					eaque. Vitae autem enim doloribus aspernatur quae blanditiis iure sunt quod! Facilis
-					aperiam veniam fugiat, recusandae deleniti dolorum, consequuntur eius pariatur sapiente
-					tempore necessitatibus quas! Nisi inventore aspernatur repellendus vel molestiae. Ipsa
-					molestias accusamus soluta qui. Eligendi est, facere, ex nihil corporis laborum corrupti
-					voluptatibus iusto quia nam quis accusantium tempore, provident tempora at ducimus quae
-					saepe sunt aliquam? Repudiandae, quod. Officia, iusto sapiente voluptatibus aut
-					perspiciatis veniam, cumque qui omnis amet magni ea minus porro temporibus cum ipsum
-					illum? Sapiente dolore neque corporis! Velit error non temporibus quisquam modi minus!
-					Nulla eligendi, mollitia dolorum recusandae error reprehenderit optio nostrum a unde
-					earum, vel ipsum deleniti minima eius ut? Tempora unde saepe mollitia nemo, velit ipsam
-					similique repellat sapiente quae autem. Accusamus assumenda doloremque dolorum explicabo
-					voluptate eveniet iure alias harum, soluta voluptas placeat? Qui, architecto ipsum! Magni,
-					ipsam. Voluptatum minima autem ab cupiditate velit explicabo temporibus unde dignissimos
-					dolorum tempore. Modi recusandae doloribus incidunt nam culpa explicabo ex obcaecati odio
-					non tempore? Porro nobis iure tempore, officiis, facere fuga aperiam impedit repudiandae
-					dolorum nesciunt, amet minima laudantium nemo enim quas. Consequuntur fugit asperiores
-					voluptatibus sed? Cum perspiciatis mollitia, corrupti quia explicabo dignissimos ab
-					distinctio ducimus ad blanditiis voluptates non adipisci similique sunt corporis cumque
-					quasi eveniet iste nemo. Cumque, officia! Modi exercitationem animi beatae excepturi
-					fugiat corporis cupiditate totam veritatis nostrum nemo autem nobis, quod, dolores at
-					quae. Vitae odit nobis officiis beatae. Odio fugiat molestias mollitia, pariatur sapiente
-					error!
-				</div>
-			</a>
-		{/each}
-	</div>
+	{#if data?.posts?.length > 0}
+		<div
+			id="blogs-section"
+			class="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-10 md:gap-x-10 mt-20 p-10"
+		>
+			{#each data.posts as post}
+				<a
+					class="hover:border-b-4 hover:border-r-4 hover:-translate-x-2 hover:-translate-y-2 border-cyber-6 p-10 bg-neutral-800 text-xl transition-all duration-100 rounded-lg"
+					href={`/blog/${post.id}`}
+				>
+					<h1 class="text-3xl">{post.title}</h1>
+					<div class="text-lg mt-2 line-clamp-3 w-full lg:w-96">
+						{post?.shortDescription}
+					</div>
+				</a>
+			{/each}
+		</div>
+	{:else}
+		<p class="text-xl text-thin text-center">No posts here yet</p>
+	{/if}
 </div>
