@@ -44,12 +44,12 @@
 	</div>
 
 	<div id="header" class="flex flex-col items-center justify-center gap-4 max-w-max p-4">
-		<h1 class="text-3xl lg:text-5xl font-orbitron text-cyber-6 mt-32">
+		<h1 class="text-3xl lg:text-5xl font-orbitron text-cyber-6 mt-32 text-center">
 			{data.meta.title}
 		</h1>
 		<p class="text-cyber-4">{data.meta.description}</p>
 
-		<div id="tags" class="flex flex-wrap gap-2">
+		<div id="tags" class="flex flex-wrap gap-2 text-sm">
 			{#each data.meta.tags as tag}
 				<span class="bg-gray-200 bg-opacity-20 rounded-lg text-gray-200 p-1">{'#'}{tag}</span>
 			{/each}

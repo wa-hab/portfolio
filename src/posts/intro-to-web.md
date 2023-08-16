@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Web
-description: A brief introduction to the web and how it works.
+description: A brief introduction to the web and the client/server model.
 date: 2021-08-29
 category: web
 tags: 
@@ -47,7 +47,7 @@ The flow and mental model of this program is fairly straightforward, and would t
 
 A detail that is mostly overlooked here, is that all of this computation is done on a *single machine*. Execution, calculation, and the display of result, all done on a single machine. The web does not work this way.
 
-# Client-Server Model:
+# Client/Server Model:
 
 Don't tell anyone I told you this, but no one really knows how the web works. We just kept doing shit and it kept working. 
 
