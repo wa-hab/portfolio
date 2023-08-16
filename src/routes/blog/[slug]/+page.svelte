@@ -21,7 +21,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<div class="flex flex-col items-center justify-center bg-neutral-900 ">
+<div class="flex flex-col items-center justify-center bg-neutral-900 w-full">
 	<div class="absolute top-10 left-10">
 		<a href="/blog" class="underline text-red-600">
 			<svg
