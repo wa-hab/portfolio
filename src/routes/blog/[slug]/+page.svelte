@@ -2,15 +2,14 @@
 	import { onMount } from 'svelte';
 
 	export let data;
-	// $: data.meta.tags = data.meta.tags.split(',').map(tag => tag.trim());
 
-	// add classes to the pre component on load
-	onMount(() => {
-		const components = document.querySelectorAll('pre')
-		for (let component of components){
-			component.className = "text-base lg:text-xl overflow-x-scroll max-w-full"
-		}
-	})
+	// // add classes to the pre component on load
+	// onMount(() => {
+	// 	const components = document.querySelectorAll('pre')
+	// 	for (let component of components){
+	// 		component.className = "text-base lg:text-xl overflow-x-scroll max-w-full"
+	// 	}
+	// })
 </script>
 
 <svelte:head>
@@ -47,9 +46,9 @@
 		<h1 class="text-3xl lg:text-5xl font-orbitron text-cyber-6 mt-32 text-center">
 			{data.meta.title}
 		</h1>
-		<p class="text-cyber-4">{data.meta.description}</p>
+		<p class="text-cyber-4 text-center">{data.meta.description}</p>
 
-		<div id="tags" class="flex flex-wrap gap-2 text-sm">
+		<div id="tags" class="flex flex-wrap gap-2 text-sm justify-around">
 			{#each data.meta.tags as tag}
 				<span class="bg-gray-200 bg-opacity-20 rounded-lg text-gray-200 p-1">{'#'}{tag}</span>
 			{/each}

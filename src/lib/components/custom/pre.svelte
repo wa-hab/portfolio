@@ -1,3 +1,3 @@
-<pre class="max-w-max overflow-x-scroll">
-    <!-- <slot /> -->
+<pre class="text-base lg:text-xl overflow-x-scroll max-w-full">
+    <slot />
 </pre>
