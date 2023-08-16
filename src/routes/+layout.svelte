@@ -2,4 +2,4 @@
     import "../app.css"
 </script>
 
-<slot/>
+<slot class="w-full bg-neutral-900"/>

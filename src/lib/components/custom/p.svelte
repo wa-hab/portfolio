@@ -1,1 +1,1 @@
-<p class="text-xl leading-8"><slot/></p>
+<p class="text-base lg:text-xl leading-8"><slot/></p>
