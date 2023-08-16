@@ -55,8 +55,6 @@
 		//calculate number of squares
 		const numSquares = Math.floor((h * w) / 1000);
 
-		console.log(numSquares);
-
 		for (let i = 0; i < numSquares; i++) {
 			const square = document.createElement('div');
 			square.classList.add(

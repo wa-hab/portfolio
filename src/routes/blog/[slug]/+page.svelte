@@ -1,6 +1,16 @@
 <script>
+	import { onMount } from 'svelte';
+
 	export let data;
 	// $: data.meta.tags = data.meta.tags.split(',').map(tag => tag.trim());
+
+	// add classes to the pre component on load
+	onMount(() => {
+		const components = document.querySelectorAll('pre')
+		for (let component of components){
+			component.className = "text-base lg:text-xl overflow-x-scroll max-w-full"
+		}
+	})
 </script>
 
 <svelte:head>
@@ -11,7 +21,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<div class="flex flex-col items-center justify-center bg-neutral-900">
+<div class="flex flex-col items-center justify-center bg-neutral-900 ">
 	<div class="absolute top-10 left-10">
 		<a href="/blog" class="underline text-red-600">
 			<svg
@@ -46,7 +56,7 @@
 		</div>
 	</div>
 
-	<div id="content" class="flex flex-col items-start justify-center text-gray-200 text-xl w-full p-4 lg:w-1/2 gap-10 overflow-x-scroll">
+	<div id="content" class="flex flex-col items-start justify-center text-gray-200 text-xl w-full p-4 lg:w-1/2 gap-10 overscroll-x-contain">
 		<svelte:component this={data.content} {...data.meta} />
 	</div>
 </div>

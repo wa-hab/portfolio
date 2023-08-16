@@ -11,7 +11,6 @@ async function getPosts() {
 		const post = await paths[path];
 		const slug = path.split('/').at(-1).replace('.md', '');
 		const metadata = post.metadata;
-		console.log(metadata);
 		metadata.published &&
 			posts.push({
 				slug,
