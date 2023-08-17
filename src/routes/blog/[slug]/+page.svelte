@@ -55,7 +55,7 @@
 		</div>
 	</div>
 
-	<div id="content" class="flex flex-col items-start justify-center text-gray-200 text-xl w-full p-4 lg:w-1/2 gap-10 overscroll-x-contain">
+	<div id="content" class="flex flex-col items-start justify-center text-gray-200 text-xl w-full p-4 lg:w-1/2 gap-10 overflow-hidden">
 		<svelte:component this={data.content} {...data.meta} />
 	</div>
 </div>
