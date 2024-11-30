@@ -15,18 +15,12 @@ export const GET = async () => {
 
 	return await sitemap.response({
 		origin: 'https://wahab.vercel.app',
-		excludeRoutePatterns: [
-			'^/dashboard.*', // i.e. routes starting with `/dashboard`
-			'.*\\[page=integer\\].*', // i.e. routes containing `[page=integer]`–e.g. `/blog/2`
-			'.*\\(authenticated\\).*' // i.e. routes within a group
-		],
 		paramValues: {
-			// paramValues can be a 1D array of strings
 			'/blog/[slug]': blogSlugs // e.g. ['hello-world', 'another-post']
 		},
 		defaultChangefreq: 'never',
 		defaultPriority: 0.7,
-		sort: 'alpha', // default is false; 'alpha' sorts all paths alphabetically.
+		sort: 'alpha',
 		processPaths: (paths) => {
 			return paths;
 		}
