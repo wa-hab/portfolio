@@ -28,7 +28,7 @@
 
 		<div class="mt-4 flex flex-col gap-2">
 			<a href="/blog" class="text-lime-500 underline hover:text-lime-300">Blog</a>
-			<a href="/projects" class="text-lime-500 underline hover:text-lime-300">Projects</a>
+			<!-- <a href="/projects" class="text-lime-500 underline hover:text-lime-300">Projects</a> -->
 			<a
 				target="_blank"
 				href="https://www.linkedin.com/in/wahaab/"
