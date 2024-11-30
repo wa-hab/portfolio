@@ -8,17 +8,7 @@ export const GET = async () => {
 	let blogSlugs;
 	try {
 		const posts = await getPosts();
-		[blogSlugs] = posts
-			.map((post) => [post.slug, post.tags])
-			.reduce(
-				(acc, [slug, tags]) => {
-					return [
-						[...acc[0], slug],
-						[...acc[1], ...tags]
-					];
-				},
-				[[], []]
-			);
+		blogSlugs = posts.map((post) => post.slug);
 	} catch (err) {
 		throw new Error('Could not load data for param values.');
 	}
