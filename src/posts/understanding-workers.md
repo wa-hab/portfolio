@@ -13,18 +13,18 @@ published: true
 This initially started as a single blog post for creating a rate limiter with Cloudflare workers. It got a bit long, so I split it into 3 parts. Part 1 explains what a worker is, Part 2 explains what a Durable Object is, and in Part 3 we create an IP-based rate limiter.
 ### What is a worker?
 
-What a worker is, can be looked at in two ways. The first is how you write a worker, the syntax, the quirks. The second is how it is executed, how is it different from a regular server? Let's look at the latter first:
+What a worker is, can be looked at in two ways. The first is how it is executed, how is it different from a regular server? The second is how you write a worker, the syntax, the quirks. Let's look at them in order.
 
 #### Execution of a worker:
 We'll assume a baseline of knowing how a server works. A machine, running a persistent process, to which requests are made and responses are returned.
 
-A worker is a server in a similar fashion, but instead of it being a single, big machine that serves all users, a worker is deployed on the Cloudflare platform in hundreds of small servers. If there are no requests, there are no active workers. In this manner, a worker is deployed is part of the **serverless** paradigm - there is no single persistent server. When a request comes in, a worker **instance** is created, that worker handles that request, and shuts down. If another request comes in before that worker is shut down, the same worker could be reused to serve that request. It is a bit like this:
+A worker is a server in a similar fashion, but instead of it being a single, big machine that serves all users, a worker is deployed on the Cloudflare platform in hundreds of small servers. The cloudflare servers themselves are quite enormous of course, but our worker instances are small, isolated instances on those beefy servers. If there are no requests, there are no active workers. In this manner, a worker is deployed is part of the **serverless** paradigm - there is no single persistent server. When a request comes in, a worker **instance** is created, the worker handles that request and shuts down. If another request comes in before the worker is shut down, the same worker could be reused to serve that request.
 
 A traditional server, either a single beefy server or a finite, controlled cluster of servers:
 
 ![trad servers](/trad-servers.png)
 
-A Cloudflare Worker:
+A Cloudflare Worker, scales to workload, geographically distributed:
 
 ![workers](/workers.png)
 
@@ -40,7 +40,7 @@ Further, we can imagine that since worker instances is spun up and wound down pl
 
 And since many of these small instances can be spawned, the workers themselves need to have a very small memory footprint. There is also an upper limit on the amount of memory a worker can consume. You give some you get some, there is no silver bullet.
 
-You can explore worker limits [here](https://developers.cloudflare.com/workers/platform/limits/) .
+You can explore worker limits [here](https://developers.cloudflare.com/workers/platform/limits/).
 
 #### How to write a worker:
 
@@ -63,4 +63,4 @@ A worker, with a fetch handler, which returns a `Hello World` response if any re
 Sidebar: Developing on the Worker's platform has certain implications for your code as well. For one, if enforces dependency injection and you might end up having a codebase with only pure functions. Which itself is not a bad thing, it is just different from how I am used to writing JavaScript code. How does it enforce this? You see the `env` being passed to the fetch handler? The `env` contains your environment variables and **bindings**. Bindings are used to connect to other Cloudflare services. So if you use `D1`, their database product, you need to access the connection to that database through the `env`.  You can see then how any helper functions you will end up implementing will require the `env` passed to them as an argument.
 
 
-Part 2 out soon.
+**Part 2 out soon.**
