@@ -1,1 +1,0 @@
-<strong class="text-cyber-4"><slot/></strong>

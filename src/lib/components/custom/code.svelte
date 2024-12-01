@@ -1,1 +1,0 @@
-<code class="bg-gray-400 p-1 rounded-lg bg-opacity-20"><slot/></code>

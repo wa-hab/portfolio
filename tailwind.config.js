@@ -6,7 +6,7 @@ export default {
 		extend: {
 			fontFamily: {
 				montserrat: ['Montserrat', 'monospace'],
-				mono: ['IBM Plex Mono', 'monospace'],
+				mono: ['Space Mono', 'monospace'],
 				gothic: ['DotGothic16', 'sans-serif']
 			},
 			typography: {
@@ -25,5 +25,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require('daisyui')]
+	plugins: [require('daisyui'), require('@tailwindcss/typography')]
 };

@@ -4,7 +4,6 @@ import { getPosts } from '$lib/utils';
 export const prerender = true; // optional
 
 export const GET = async () => {
-	// Get data for parameterized routes however you need to; this is only an example.
 	let blogSlugs;
 	try {
 		const posts = await getPosts();

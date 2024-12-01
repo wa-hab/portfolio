@@ -1,15 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
 
-	export let data;
+	onMount(() => {
+		const links = document.querySelectorAll('.prose a');
+		for (const link of links) {
+			link.target = '_blank';
+			link.rel = 'noopener noreferrer';
+		}
+	});
 
-	// // add classes to the pre component on load
-	// onMount(() => {
-	// 	const components = document.querySelectorAll('pre')
-	// 	for (let component of components){
-	// 		component.className = "text-base lg:text-xl overflow-x-scroll max-w-full"
-	// 	}
-	// })
+	export let data;
 </script>
 
 <svelte:head>
@@ -33,7 +33,9 @@
 	class="flex flex-col items-center justify-center bg-neutral-900 w-screen h-screen overflow-y-auto"
 >
 	<div>
-		<a href="/blog" class="text-lime-500 hover:text-lime-700 underline top-10 left-10 absolute"
+		<a
+			href="/blog"
+			class="text-lime-500 hover:text-lime-700 underline md:top-10 md:left-10 absolute p-2 top-2 left-2 backdrop-blur-md rounded-md"
 			>back</a
 		>
 	</div>
@@ -45,7 +47,7 @@
 
 		<div
 			id="content"
-			class="flex w-full flex-col items-start justify-center text-gray-200 text-lg p-4 gap-10 overflow-hidden mb-32 leading-relaxed tracking-wide font-mono"
+			class="prose md:prose-md lg:prose-lg xl:prose-xl p-4 prose-h3:text-lime-500 prose-h4:text-lime-500 prose-a:underline prose-a:text-lime-500 text-gray-200 w-full mx-auto my-20"
 		>
 			<svelte:component this={data.content} {...data.meta} />
 		</div>
