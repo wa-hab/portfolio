@@ -1,7 +1,7 @@
 ---
 title: Making a rate limiter - Part 1 - What is a worker?
 description: Learn what Cloudflare Workers are, how they execute, and how to write your first worker
-date: 2023-12-11
+date: 2024-12-01
 category: web
 tags:
  - cloudflare
