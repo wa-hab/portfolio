@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/analytics": "^1.4.1",
 		"daisyui": "^2.51.6",
 		"highlight.js": "^11.8.0",
 		"mdsvex": "^0.11.0",
