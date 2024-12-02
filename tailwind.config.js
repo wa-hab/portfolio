@@ -7,7 +7,8 @@ export default {
 			fontFamily: {
 				montserrat: ['Montserrat', 'monospace'],
 				mono: ['Space Mono', 'monospace'],
-				gothic: ['DotGothic16', 'sans-serif']
+				gothic: ['DotGothic16', 'sans-serif'],
+				text: ['Merriweather', 'serif']
 			},
 			typography: {
 				DEFAULT: {
