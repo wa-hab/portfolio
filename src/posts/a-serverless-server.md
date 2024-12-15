@@ -1,6 +1,6 @@
 ---
 title: Making a rate limiter - Part 2 - Understanding Durable Objects
-description: Learn what Durable Objects are, how they work, and their pros and cons compared to traditional databases
+description: Learn what Durable Objects are, how they work, and when to use them
 date: 2024-12-15
 category: web
 tags:
