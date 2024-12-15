@@ -47,8 +47,8 @@
 
 		<div
 			id="content"
-			class="prose md:prose-md lg:prose-lg xl:prose-xl p-4 prose-h3:text-lime-500 prose-h4:text-lime-500 prose-a:underline prose-a:text-lime-500 text-gray-200 w-full mx-auto my-20
-			prose-code:text-yellow-400 prose-em:text-orange-400 font-text
+			class="prose md:prose-md lg:prose-lg xl:prose-xl p-4 prose-h3:text-lime-500 prose-h4:text-lime-500 prose-a:underline prose-a:text-lime-500 prose-strong:text-lime-500 text-gray-200 w-full mx-auto my-20
+			prose-code:text-yellow-400 prose-em:text-orange-400 font-text !leading-loose
 			"
 		>
 			<svelte:component this={data.content} {...data.meta} />

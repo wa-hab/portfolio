@@ -63,4 +63,4 @@ A worker, with a fetch handler, which returns a `Hello World` response if any re
 Sidebar: Developing on the Worker's platform has certain implications for your code as well. For one, if enforces dependency injection and you might end up having a codebase with only pure functions. Which itself is not a bad thing, it is just different from how I am used to writing JavaScript code. How does it enforce this? You see the `env` being passed to the fetch handler? The `env` contains your environment variables and **bindings**. Bindings are used to connect to other Cloudflare services. So if you use `D1`, their database product, you need to access the connection to that database through the `env`.  You can see then how any helper functions you will end up implementing will require the `env` passed to them as an argument.
 
 
-**Part 2 out soon.**
+You can read [part 2 here](https://wahab.vercel.app/blog/a-serverless-server)
