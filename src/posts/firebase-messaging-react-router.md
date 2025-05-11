@@ -33,7 +33,7 @@ const messaging = getMessaging(app);
 
 This works fine in when we're not using React Router 7. But inheriting some of that Remix DNA, React Router 7 uses Server-Side Rendering (SSR) by default. And Firebase's messaging service is very much a browser-only thing. 
 
-Even if you're using it in SPA mode by setting `ssr: false`, where you application IS functionally a client side rendered application, there is an intermediate build step where the routes are server rendered to generate the `index.html` file. This is explained in the [React Router documentation](https://reactrouter.com/how-to/spa#1-disable-runtime-server-rendering):
+Even if you're using it in SPA mode by setting `ssr: false`, where your application IS functionally a client side rendered application, there is an intermediate build step where the routes are server rendered to generate the `index.html` file. This is explained in the [React Router documentation](https://reactrouter.com/how-to/spa#1-disable-runtime-server-rendering):
 
 > It's important to note that setting `ssr: false` only disables runtime server rendering. React Router will still server render your root route at build time to generate the `index.html` file. This is why your project still needs a dependency on `@react-router/node` and your routes need to be SSR-safe. That means you can't call `window` or other browser-only APIs during the initial render, even when server rendering is disabled.
 
